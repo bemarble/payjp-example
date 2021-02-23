@@ -7,9 +7,22 @@ PAY.JP のクレジット払い機能のサンプルコードです
 - 支払い
 - 顧客登録
 
+
+## サンプルの説明
+
+* simple_charge.php
+  * 支払い機能を試すサンプルです
+* customer_charge.php
+  * 支払い機能と顧客機能を試すサンプルです
+* product_charge.php
+  * PAY.JPに登録した商品の金額を支払うサンプルです
+  * 利用にはあらかじめプロダクトを登録しておいてください
+  * 登録後、表示させたいプロダクトのIDを `.env` ファイルに記述してください
+
+
 ### ライブラリインストール
 
-インストールコマンドを実行してください
+初回実行時にインストールコマンドを実行してください
 
 ```
 $ cd app
@@ -20,7 +33,7 @@ $ composer install
 
 `app/.env.default` をコピーして、`app/.env` ファイルを作成してください
 
- `app/.env` の中にPAY.JPサイトの公開鍵と秘密鍵を設定してください
+`app/.env` の中にPAY.JPサイトの公開鍵と秘密鍵を設定してください
 
 ## 起動
 
@@ -58,14 +71,21 @@ https://pay.jp/docs/api/
 ## プロジェクトの中身
 
 ```
+.
 ├── Dockerfile # Docker設定ファイル
 ├── README.md # 本ファイル
-├── app
-│   ├── checkout.php # 支払い処理
-│   ├── composer # composer本体
-│   ├── composer.json # composer設定ファイル
-│   ├── index.php　# サンプルページ
-│   └── vendor # 関連ライブラリ
+├── app # 各サンプルコード
+│   ├── checkout.php
+│   ├── checkout_product.php
+│   ├── checkout_with_customer.php
+│   ├── composer
+│   ├── composer.json
+│   ├── composer.lock
+│   ├── customer_charge.php
+│   ├── index.php
+│   ├── product_charge.php
+│   ├── simple_charge.php
+│   └── vendor
 ├── docker-compose.yml # Docker設定ファイル
 └── nginx
     └── site.conf # nginx設定ファイル
