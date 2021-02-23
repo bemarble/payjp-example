@@ -43,15 +43,8 @@ $dotenv->load();
           data-key="<?php echo $_ENV['PAYJP_PUBLIC_KEY'];?>"
           data-payjp="<?php echo $_ENV['PAYJP_OAUTH_CLIENT_ID'];?>">
         </script>
-
       </form>
-
-
     </div>
-
-
   </div>
-
-
 </body>
 </html>
